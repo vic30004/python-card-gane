@@ -65,7 +65,16 @@ while True:
 
     print("WELCOME TO BLACKJACK")
     # Create and shuffle the deck, deal two cards to each player
+    deck = deck.Deck()
+    deck.shuffle()
 
+    player_hand = deck.Hand()
+    player_hand.add_card(deck.deck())
+    player_hand.add_card(deck.deck())
+
+    dealer_hand = deck.Hand()
+    dealer_hand.add_card(deck.deck())
+    dealer_hand.add_card(deck.deck())
 
     # Set up the player's chips
 
