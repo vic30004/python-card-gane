@@ -49,25 +49,25 @@ class Hand:
 
         # track aces
 
-        if card.ranks =='Ace':
-            self.aces+=1
+        if card.ranks == 'Ace':
+            self.aces += 1
 
     def adjust_for_ace(self):
 
         # IF TOTAL VALUE >21 AND I STILL HAVE AN ACE
         # THAN CHANGE ME ACE TO BE A ONE INSTEAD OF AN 11
         while self.value > 21 and self.aces:
-            self.value -=10
-            self.aces -=1
+            self.value -= 10
+            self.aces -= 1
 
 
 class Chips:
     def __init__(self):
         self.total = 100
-        self.bet =0
-    
+        self.bet = 0
+
     def win_bet(self):
-        pass
+        self.total += self.bet
 
     def lose_bet(self):
-        pass
+        self.total -= self.bet
