@@ -61,16 +61,13 @@ class Hand:
             self.aces -=1
 
 
-test_deck = Deck()
+class Chips:
+    def __init__(self):
+        self.total = 100
+        self.bet =0
+    
+    def win_bet(self):
+        pass
 
-test_deck.shuffle()
-
-test_player = Hand()
-pulled_card = test_deck.deal()
-print(pulled_card)
-test_player.add_card(pulled_card)
-print(test_player.value)
-
-
-test_player.add_card(test_deck.deal())
-print(test_player.value)
+    def lose_bet(self):
+        pass
