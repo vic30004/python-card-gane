@@ -77,12 +77,14 @@ while True:
     dealer_hand.add_card(deck.deck())
 
     # Set up the player's chips
+    player_chips = deck.Chips()
 
 
     # Prompt the player for their bet
+    take_bet(player_chips)
 
     # Show cards (but keep one delaer card hidden)
-
+    show_some(player_hand,dealer_hand)
 
     while playing: #this is being called from the hit_or_stand func
 
