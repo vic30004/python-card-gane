@@ -58,3 +58,28 @@ def dealer_wins(player,dealer,chips):
 
 def push(player,dealer):
     print("Dealer and Player tie! PUSH")
+
+
+while True:
+    # Print an opening statement
+
+    print("WELCOME TO BLACKJACK")
+    # Create and shuffle the deck, deal two cards to each player
+
+
+    # Set up the player's chips
+
+
+    # Prompt the player for their bet
+
+    # Show cards (but keep one delaer card hidden)
+
+
+    while playing: #this is being called from the hit_or_stand func
+
+        # Prompt for player to hit or stand
+
+        # Show cards (but keep one dealer card hidden)
+
+        # If player's hand exceedss 21, run player_bust() and break out the loop
+
