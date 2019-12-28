@@ -18,6 +18,7 @@ def take_bet(chips):
             else:
                 break
 
+
 def hit(deck, hand):
     hand.add_card(deck.deal())
     hand.adjust_for_ace()
@@ -40,23 +41,28 @@ def hit_or_stand(deck, hand):
             continue
         break
 
-def player_busts(player,dealer,chips):
+
+def player_busts(player, dealer, chips):
     print("BUST PLAYER!")
     chips.lose_bet()
 
-def player_wins(player,dealer,chips):
+
+def player_wins(player, dealer, chips):
     print("PLAYER WINS!")
     chips.win_bet()
 
-def dealer_busts(player,dealer,chips):
+
+def dealer_busts(player, dealer, chips):
     print('PLAYER WINS! DEALER BUSTED!')
     chips.win_bet
 
-def dealer_wins(player,dealer,chips):
+
+def dealer_wins(player, dealer, chips):
     print("DEALER WINS!")
     chips.lose_bet()
 
-def push(player,dealer):
+
+def push(player, dealer):
     print("Dealer and Player tie! PUSH")
 
 
@@ -65,32 +71,48 @@ while True:
 
     print("WELCOME TO BLACKJACK")
     # Create and shuffle the deck, deal two cards to each player
-    deck = deck.Deck()
-    deck.shuffle()
+    decks = deck.Deck()
+    decks.shuffle()
 
     player_hand = deck.Hand()
-    player_hand.add_card(deck.deck())
-    player_hand.add_card(deck.deck())
+    player_hand.add_card(decks.deal())
+    player_hand.add_card(decks.deal())
 
     dealer_hand = deck.Hand()
-    dealer_hand.add_card(deck.deck())
-    dealer_hand.add_card(deck.deck())
+    dealer_hand.add_card(decks.deal())
+    dealer_hand.add_card(decks.deal())
 
     # Set up the player's chips
     player_chips = deck.Chips()
-
 
     # Prompt the player for their bet
     take_bet(player_chips)
 
     # Show cards (but keep one delaer card hidden)
-    show_some(player_hand,dealer_hand)
+    show_some(player_hand, dealer_hand)
 
-    while playing: #this is being called from the hit_or_stand func
+    while playing:  # this is being called from the hit_or_stand func
 
         # Prompt for player to hit or stand
+        hit_or_stand(deck, player_hand)
 
         # Show cards (but keep one dealer card hidden)
+        show_some(player_hand, dealer_hand)
 
         # If player's hand exceedss 21, run player_bust() and break out the loop
+        if player_hand.value >21:
+            player_busts(player_hand,dealer_hand,player_chips)
 
+            break
+
+        # If player hasn't buster, player Dealer's hand until Dealer reacher 17
+
+            #show all cards
+
+            # Run different winning scenaris
+
+        # Inform Player of their chips total
+
+        # Ask to play again 
+
+            break
